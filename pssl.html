@@ -1,41 +1,132 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PSL Stream</title>
-  <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background: black;
+},
+       accent: {
+        DEFAULT: 'hsl(var(--accent))',
+        foreground: 'hsl(var(--accent-foreground))'
+       },
+       popover: {
+        DEFAULT: 'hsl(var(--popover))',
+        foreground: 'hsl(var(--popover-foreground))'
+       },
+       card: {
+        DEFAULT: 'hsl(var(--card))',
+        foreground: 'hsl(var(--card-foreground))'
+       },
+      },
+     }
     }
-    video {
-      width: 100%;
-      height: 100%;
-      background: black;
-    }
-  </style>
-</head>
-<body>
-  <video id="video" controls autoplay></video>
-
-  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-  <script>
-    const video = document.getElementById('video');
-    const urlParams = new URLSearchParams(window.location.search);
-    const streamURL = urlParams.get('id');
-
-    if (Hls.isSupported() && streamURL) {
-      const hls = new Hls();
-      hls.loadSource(streamURL);
-      hls.attachMedia(video);
-    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-      video.src = streamURL;
-    } else {
-      alert('Stream not supported');
-    }
+   }
   </script>
+  <style type="text/tailwindcss">
+   @layer base {
+    :root {
+     --background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 0 0% 100%;
+--card-foreground: 240 10% 3.9%;
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+    }
+    .dark {
+     --background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+    }
+   }
+  </style>
+  </head>
+  <body>
+    
+
+<div class="bg-background text-primary-foreground min-h-screen flex flex-col items-center justify-center">
+  <h1 class="text-3xl font-bold mb-4">ModderGuy On TOP </h1>
+  <div class="w-full md:w-3/4 lg:w-1/2">
+    <div class="aspect-w-16 aspect-h-9">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="" class="rounded-lg shadow-lg" frameborder="0" height="315" src="https://xhls.embedxt.site/hls/live.mpd"YouTube video player width="560"></iframe>
+    </div>
+  </div>
+</div>
 </body>
 </html>
+
+<!--Sidebar Wrapper-->
+
+<div id="sidebar-wrapper" itemscope="itemscope" itemtype="https://schema.org/WPSideBar" role="banner">
+
+<div class="sidebar section" id="sidebar" name="Sidebar Right"><div class="widget HTML" data-version="2" id="HTML5">
+
+
+               
+
+
+        
+
+            
+        <div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.modderguy.in/p/for-pcios-users-only.html" 
+       target="_blank" 
+       style="background-color: red; color: white; padding: 15px 30px; 
+              font-size: 18px; border: none; border-radius: 8px; 
+              text-decoration: none; display: inline-block; 
+              transition: background-color 0.3s;"
+       onmouseover="this.style.backgroundColor='skyblue'"
+       onmouseout="this.style.backgroundColor='red'">
+        WATCH LIVE FOR PC
+    </a>
+</div>
+  <div style="text-align: center; margin-top: 20px;">
+    <a href="https://www.modderguy.in/p/function-openstream-var-url_23.html" 
+       target="_blank" 
+       style="background-color: red; color: white; padding: 15px 30px; 
+              font-size: 18px; border: none; border-radius: 8px; 
+              text-decoration: none; display: inline-block; 
+              transition: background-color 0.3s;"
+       onmouseover="this.style.backgroundColor='skyblue'"
+       onmouseout="this.style.backgroundColor='red'">
+        WATCH LIVE FOR IOS
+    </a>
+</div>
+  
+          
+    <script data-cfasync="false" type="text/javascript" id="clever-core" 
+        src="https://scripts.cleverwebserver.com/7d89828e8acaa8e7a8572f104048f67c.js">
+    </script>
+</div>
+  <div style="border: 1px solid #ff0000; padding: 15px; background-color: #fff3f3; border-radius: 8px; margin: 20px 0;">
+
+  <strong style="color: #d9534f;">Disclaimer:</strong>
+
+  <p style="font-size: 14px; color: #333;">
+    The content available on this website is embedded from third-party sources. We do not host or upload any of the videos or streams shown. All rights to the content belong to the respective copyright owners. If you have any legal issues, please contact the appropriate media file owners or host sites.
+</p>
+
+</div>
