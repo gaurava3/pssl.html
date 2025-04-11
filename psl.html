@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stream Player</title>
+  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+  <style>
+    body {
+      margin: 0;
+      background-color: black;
+    }
+    video {
+      width: 100vw;
+      height: 100vh;
+      background-color: black;
+    }
+  </style>
+</head>
+<body>
+  <video id="video" controls autoplay></video>
+
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const videoUrl = urlParams.get("id");
+    const video = document.getElementById("video");
+
+    if (Hls.isSupported()) {
+      const hls = new Hls();
+      hls.loadSource(videoUrl);
+      hls.attachMedia(video);
+      hls.on(Hls.Events.MANIFEST_PARSED, function () {
+        video.play();
+      });
+    } else if (video.canPlayType("application/vnd.apple.mpegurl")) {
+      video.src = videoUrl;
+      video.addEventListener("loadedmetadata", function () {
+        video.play();
+      });
+    } else {
+      alert("Your browser does not support HLS streaming.");
+    }
+  </script>
+</body>
+</html>
